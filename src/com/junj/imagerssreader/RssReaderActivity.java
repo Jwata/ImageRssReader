@@ -1,13 +1,13 @@
 package com.junj.imagerssreader;
 
-import java.util.ArrayList;
-
-import android.app.ListActivity;
 import android.os.Bundle;
+import android.app.ListActivity;
 import android.view.Menu;
 
+import java.util.ArrayList;
+
 public class RssReaderActivity extends ListActivity {
-	private ArrayList mItems;
+	private ArrayList<Item> mItems;
 	private RssListAdapter mAdapter;
 	
 	@Override
@@ -15,7 +15,7 @@ public class RssReaderActivity extends ListActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main);
 		
-		mItems = new ArrayList();
+		mItems = new ArrayList<Item>();
 		mAdapter = new RssListAdapter(this, mItems);
 		
 		setListAdapter(mAdapter);
