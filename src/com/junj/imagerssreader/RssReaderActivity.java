@@ -7,6 +7,7 @@ import android.view.Menu;
 import java.util.ArrayList;
 
 public class RssReaderActivity extends ListActivity {
+	public static final String RSS_FEED_URL = "http://itpro.nikkeibp.co.jp/rss/ITpro.rdf"; 
 	private ArrayList<Item> mItems;
 	private RssListAdapter mAdapter;
 	
@@ -18,11 +19,8 @@ public class RssReaderActivity extends ListActivity {
 		mItems = new ArrayList<Item>();
 		mAdapter = new RssListAdapter(this, mItems);
 		
-		setListAdapter(mAdapter);
-		
-		for(int i = 0; i < 10; i++) {
-			mAdapter.add(new Item());
-		}
+		RssParserTask task = new RssParserTask(this, mAdapter);
+		task.execute(RSS_FEED_URL);
 	}
 
 	@Override
