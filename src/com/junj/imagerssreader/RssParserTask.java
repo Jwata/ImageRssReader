@@ -54,6 +54,8 @@ public class RssParserTask extends AsyncTask<String, Integer, RssListAdapter> {
 	
 	public RssListAdapter parseXml(InputStream is) throws IOException,XmlPullParserException {
 		XmlPullParser parser = Xml.newPullParser();
+		int i = 0;
+		int itemNum = 10;
 		
 		try {
 			
@@ -82,9 +84,15 @@ public class RssParserTask extends AsyncTask<String, Integer, RssListAdapter> {
 					tag = parser.getName();
 					if (tag.equals("item")) {
 						mAdapter.add(currentItem);
+						i++;
 					}
 					break;
 				}
+				
+				if (i >= itemNum) {
+					break;
+				}
+				
 				eventType = parser.next();
 			}
 		} catch (Exception e) {

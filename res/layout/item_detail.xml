@@ -15,11 +15,12 @@
 	<TextView
 		android:id="@+id/item_detail_descr"
 		android:layout_width="fill_parent"
-		android:layout_height="wrap_content"/>
+		android:layout_height="wrap_content"
+		android:lines="2"
+		android:ellipsize="end" />
 	
 	<ImageView
 		android:id="@+id/item_detail_image"
 		android:layout_width="fill_parent"
 		android:layout_height="wrap_content"/>
-
 </LinearLayout>

@@ -12,7 +12,8 @@ import java.util.ArrayList;
 
 public class RssReaderActivity extends ListActivity {
 	public static final int MENU_ITEM_RELOAD = Menu.FIRST;
-	public static final String RSS_FEED_URL = "https://picasaweb.google.com/data/feed/base/featured?alt=rss&kind=photo&access=public&slabel=featured&imgmax=1600&hl=ja"; 
+	public static final String RSS_FEED_URL = "http://www.ubcbotanicalgarden.org/potd/index.xml";
+	//public static final String RSS_FEED_URL = "https://picasaweb.google.com/data/feed/base/featured?alt=rss&kind=photo&access=public&slabel=featured&imgmax=1600&hl=ja"; 
 	//public static final String RSS_FEED_URL = "http://itpro.nikkeibp.co.jp/rss/ITpro.rdf"; 
 	private ArrayList<Item> mItems;
 	private RssListAdapter mAdapter;
@@ -43,7 +44,7 @@ public class RssReaderActivity extends ListActivity {
 	public boolean onCreateOptionsMenu(Menu menu) {
 		boolean result = super.onCreateOptionsMenu(menu);
 		
-		menu.add(0, MENU_ITEM_RELOAD, 0, "çXêV");
+		menu.add(0, MENU_ITEM_RELOAD, 0, "ÔøΩXÔøΩV");
 
 		return result;
 	}
