@@ -7,12 +7,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class RssListAdapter extends ArrayAdapter<Item> {
 	private LayoutInflater mInflater;
 	private TextView mTitle;
 	private TextView mDescription;
+	private ImageView mImage;
 	
 	public RssListAdapter(Context context, List<Item> objects) {
 		super(context, 0, objects);
@@ -37,6 +39,11 @@ public class RssListAdapter extends ArrayAdapter<Item> {
 			String description = item.getDescription().toString();
 			mDescription = (TextView) view.findViewById(R.id.item_descr);
 			mDescription.setText(description);
+			
+			String imageURL = item.getImageURL();
+			mImage = (ImageView) view.findViewById(R.id.item_image);
+			WebImageLoaderTask task = new WebImageLoaderTask(mImage);
+			task.execute(imageURL);
 		}
 
 		return view;

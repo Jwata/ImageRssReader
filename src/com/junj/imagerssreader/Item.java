@@ -4,11 +4,12 @@ package com.junj.imagerssreader;
 public class Item {
 	private CharSequence mTitle;
 	private CharSequence mDescription;
-	private CharSequence mImageURL;
+	private String mImageURL;
 	
 	public Item() {
 		mTitle = "";
 		mDescription = "";
+		mImageURL = "";
 	}
 	
 	public CharSequence getDescription() {
@@ -19,7 +20,7 @@ public class Item {
 		return mTitle;
 	}
 	
-	public CharSequence getImageURL() {
+	public String getImageURL() {
 		return mImageURL;
 	}
 	
@@ -31,7 +32,7 @@ public class Item {
 		mTitle = title;
 	}
 	
-	public void setImageURL(CharSequence url) {
+	public void setImageURL(String url) {
 		mImageURL = url;
 	}
 }
