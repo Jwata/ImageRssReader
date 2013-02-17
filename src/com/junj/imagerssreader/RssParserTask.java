@@ -73,6 +73,8 @@ public class RssParserTask extends AsyncTask<String, Integer, RssListAdapter> {
 							currentItem.setTitle(parser.nextText());
 						} else if (tag.equals("description")) {
 							currentItem.setDescription(parser.nextText());
+						} else if (tag.equals("thumbnail")) {
+							currentItem.setImageURL(parser.getAttributeValue(null, "url"));	
 						}
 					}
 					break;
