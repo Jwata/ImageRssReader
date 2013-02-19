@@ -17,8 +17,27 @@
 		android:layout_height="wrap_content"
 		android:lines="2"
 		android:ellipsize="end" />
+	
+	<LinearLayout
+   		android:id="@+id/item_wait"
+   		android:layout_width="fill_parent"
+   		android:layout_height="60dp"
+   		android:gravity="center"
+   		>
+	<!-- progree bar on loading -->
+	<ProgressBar 
+	    android:id="@+id/item_loading"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		style="?android:attr/progressBarStyleSmallInverse"
+		android:layout_gravity="center_vertical|center_horizontal"
+	    />
+	<!-- image -->
 	<ImageView
 		android:id="@+id/item_image"
 		android:layout_width="fill_parent"
-		android:layout_height="wrap_content"/>
+		android:layout_height="wrap_content"
+		android:visibility="gone"
+		/>
+	</LinearLayout>
 </LinearLayout>
