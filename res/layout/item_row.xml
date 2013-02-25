@@ -25,6 +25,7 @@
    		android:gravity="center"
    		>
 	<!-- progree bar on loading -->
+	<!--
 	<ProgressBar 
 	    android:id="@+id/item_loading"
 		android:layout_width="wrap_content"
@@ -32,12 +33,12 @@
 		style="?android:attr/progressBarStyleSmallInverse"
 		android:layout_gravity="center_vertical|center_horizontal"
 	    />
+	-->
 	<!-- image -->
 	<ImageView
 		android:id="@+id/item_image"
 		android:layout_width="fill_parent"
 		android:layout_height="wrap_content"
-		android:visibility="gone"
 		/>
 	</LinearLayout>
 </LinearLayout>

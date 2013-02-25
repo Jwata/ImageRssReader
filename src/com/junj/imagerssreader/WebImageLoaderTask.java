@@ -19,15 +19,31 @@ public class WebImageLoaderTask extends AsyncTask<String, Void, Bitmap> {
 
 	@Override
 	protected Bitmap doInBackground(String... params) {
+		mUrl = params[0];
 		try {
-			mUrl = params[0];
-			mImageView.setTag(mUrl);
-			URL imageURL = new URL(mUrl);
-			InputStream is = imageURL.openStream();
-			Bitmap bitmap = BitmapFactory.decodeStream(is);
-			is.close();
+			// Cache から取得
+			Bitmap image = ImageCache.getImage(mUrl);
 			
-			return bitmap;
+			// Cache が無かったら webにアクセスする
+			if (image == null) {
+// debug 
+System.out.println("loading from web");
+			
+				mImageView.setTag(mUrl);
+				URL imageURL = new URL(mUrl);
+				InputStream is = imageURL.openStream();
+				image = BitmapFactory.decodeStream(is);
+				is.close();
+				
+				// Cacheにセットする
+				ImageCache.setImage(mUrl, image);
+			} else {
+// debug 
+System.out.println("loading from cache");
+				
+			}
+			
+			return image;
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
