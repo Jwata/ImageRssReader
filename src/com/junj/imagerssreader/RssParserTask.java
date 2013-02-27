@@ -56,6 +56,8 @@ public class RssParserTask extends AsyncTask<String, Integer, RssListAdapter> {
 		XmlPullParser parser = Xml.newPullParser();
 		int i = 0;
 		int itemNum = 10;
+//debug
+System.out.println("parse start!");
 		
 		try {
 			

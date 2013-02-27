@@ -12,7 +12,7 @@ import java.util.ArrayList;
 
 public class RssReaderActivity extends ListActivity {
 	public static final int MENU_ITEM_RELOAD = Menu.FIRST;
-	public static final String RSS_FEED_URL = "https://picasaweb.google.com/data/feed/base/featured?alt=rss&kind=photo&access=public&slabel=featured&imgmax=1600&hl=ja"; 
+	public static final String RSS_FEED_URL = "https://picasaweb.google.com/data/feed/base/featured?alt=rss"; 
 	private ArrayList<Item> mItems;
 	private RssListAdapter mAdapter;
 	
