@@ -20,7 +20,7 @@ public class ItemDetailActivity extends Activity {
 		
 		String title = intent.getStringExtra("TITLE");
 		String description = intent.getStringExtra("DESCRIPTION");
-		String imageUrlString = intent.getStringExtra("IMAGEURL");
+		String imageURL = intent.getStringExtra("IMAGEURL");
 		
 		mTitle = (TextView) findViewById(R.id.item_detail_title);
 		mDescription = (TextView) findViewById(R.id.item_detail_descr);
@@ -30,8 +30,8 @@ public class ItemDetailActivity extends Activity {
 		mTitle.setText(title);
 		mDescription.setText(description);
 		
-		WebImageLoaderTask task = new WebImageLoaderTask(mImage);
-		task.execute(imageUrlString);
+		WebImageLoaderTask task = new WebImageLoaderTask(mImage, imageURL);
+		task.execute(imageURL);
 	}
 
 }

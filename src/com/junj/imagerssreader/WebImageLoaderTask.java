@@ -12,11 +12,12 @@ import android.widget.ImageView;
 public class WebImageLoaderTask extends AsyncTask<String, Void, Bitmap> {
 	private ImageView mImageView;
 	private String mUrl;
-	private String mTag;
+	private String mImageTag;
 	
-	public WebImageLoaderTask(ImageView iv) {
+	public WebImageLoaderTask(ImageView iv, String imageURL) {
 		mImageView = iv;
-		mTag = mImageView.getTag().toString();
+		mImageTag = imageURL;
+		mImageView.setTag(mImageTag);
 	}
 
 	@Override
@@ -54,7 +55,7 @@ System.out.println("loading from cache");
 	
 	@Override
 	protected void onPostExecute(Bitmap result) {
-		if (mTag.equals(mImageView.getTag())) {
+		if (mImageTag.equals(mImageView.getTag())) {
 			mImageView.setImageBitmap(result);
 		}
 	}

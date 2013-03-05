@@ -42,7 +42,7 @@ public class RssListAdapter extends ArrayAdapter<Item> {
 			
 			String imageURL = item.getImageURL();
 			mImage = (ImageView) view.findViewById(R.id.item_image);
-			WebImageLoaderTask task = new WebImageLoaderTask(mImage);
+			WebImageLoaderTask task = new WebImageLoaderTask(mImage, imageURL);
 			task.execute(imageURL);
 		}
 
