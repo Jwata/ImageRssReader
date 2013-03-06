@@ -1,5 +1,6 @@
 package com.junj.imagerssreader;
 
+import android.opengl.GLSurfaceView;
 import android.os.Bundle;
 import android.app.ListActivity;
 import android.content.Intent;
@@ -16,6 +17,8 @@ public class RssReaderActivity extends ListActivity {
 	private ArrayList<Item> mItems;
 	private RssListAdapter mAdapter;
 	
+	private GLSurfaceView mGLSurfaceView;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -26,6 +29,12 @@ public class RssReaderActivity extends ListActivity {
 		
 		RssParserTask task = new RssParserTask(this, mAdapter);
 		task.execute(RSS_FEED_URL);
+		
+		
+		mGLSurfaceView = new GLSurfaceView(this);
+		mGLSurfaceView.setEGLContextClientVersion(2);
+		mGLSurfaceView.setRenderer(new SimpleRenderer(getApplicationContext()));
+		setContentView(mGLSurfaceView);
 	}
 
 	@Override
@@ -60,5 +69,16 @@ public class RssReaderActivity extends ListActivity {
 		}
 		return super.onOptionsItemSelected(item);
 	}
-
+	
+	@Override
+	public void onResume() {
+		super.onResume();
+		mGLSurfaceView.onResume();
+	}
+	
+	@Override
+	public void onPause() {
+		super.onPause();
+		mGLSurfaceView.onPause();
+	}
 }
