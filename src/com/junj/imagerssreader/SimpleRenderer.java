@@ -10,26 +10,26 @@ import android.opengl.GLSurfaceView.Renderer;
 public final class SimpleRenderer implements GLSurfaceView.Renderer {
 	private final Context mContext;
 	
-	// ’¸“_ƒf[ƒ^
+	// é ‚ç‚¹ãƒ‡ãƒ¼ã‚¿
 	private static final float VERTEXS[] = {
-		-1.0f,  1.0f, 0.0f,	// ¶ã
-		-1.0f, -1.0f, 0.0f,	// ¶‰º
-		 1.0f,  1.0f, 0.0f,	// ‰Eã
-		 1.0f, -1.0f, 0.0f	// ‰E‰º
+		-1.0f,  1.0f, 0.0f,	// å·¦ä¸Š
+		-1.0f, -1.0f, 0.0f,	// å·¦ä¸‹
+		 1.0f,  1.0f, 0.0f,	// å³ä¸Š
+		 1.0f, -1.0f, 0.0f	// å³ä¸‹
 	};
 
-	// ƒeƒNƒXƒ`ƒƒƒf[ƒ^
+	// ãƒ†ã‚¯ã‚¹ãƒãƒ£ãƒ‡ãƒ¼ã‚¿
 	private static final float TEXCOORDS[] = {
-		0.0f, 0.0f,	// ¶ã
-		0.0f, 1.0f,	// ¶‰º
-		1.0f, 0.0f,	// ‰Eã
-		1.0f, 1.0f	// ‰E‰º
+		0.0f, 0.0f,	// å·¦ä¸Š
+		0.0f, 1.0f,	// å·¦ä¸‹
+		1.0f, 0.0f,	// å³ä¸Š
+		1.0f, 1.0f	// å³ä¸‹
 	};
 	
-	// ’¸“_ƒoƒbƒtƒ@
+	// é ‚ç‚¹ãƒãƒƒãƒ•ã‚¡
 	private final FloatBuffer mVertexBuffer = GLES20Utils.createBuffer(VERTEXS);
 	
-	// ƒeƒNƒXƒ`ƒƒƒoƒbƒtƒ@
+	// ãƒ†ã‚¯ã‚¹ãƒãƒ£ãƒãƒƒãƒ•ã‚¡
 	private final FloatBuffer mTexcoordBuffer = GLES20Utils.createBuffer(TEXCOORDS);
 
 	// Construct
@@ -58,20 +58,20 @@ public final class SimpleRenderer implements GLSurfaceView.Renderer {
 	
 	@Override
 	public void onDrawFrame(GL10 gl) {
-		// OpenGL ES 2.0 ‚ğg—p‚·‚é‚Ì‚ÅAƒpƒ‰ƒ[ƒ^‚Å“n‚³‚ê‚½ GL10 ƒCƒ“ƒ^[ƒtƒF[ƒX‚ğ–³‹‚µ‚ÄA‘ã‚í‚è‚É GLES20 ƒNƒ‰ƒX‚ÌÃ“Iƒƒ\ƒbƒh‚ğg—p‚µ‚Ü‚·B
+		// OpenGL ES 2.0 ã‚’ä½¿ç”¨ã™ã‚‹ã®ã§ã€ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã§æ¸¡ã•ã‚ŒãŸ GL10 ã‚¤ãƒ³ã‚¿ãƒ¼ãƒ•ã‚§ãƒ¼ã‚¹ã‚’ç„¡è¦–ã—ã¦ã€ä»£ã‚ã‚Šã« GLES20 ã‚¯ãƒ©ã‚¹ã®é™çš„ãƒ¡ã‚½ãƒƒãƒ‰ã‚’ä½¿ç”¨ã—ã¾ã™ã€‚
 
-		// XXX - ‚±‚ÌƒTƒ“ƒvƒ‹‚Å‚ÍƒeƒNƒXƒ`ƒƒ‚ÌŠÈ’P‚È•`‰æ‚¾‚¯‚È‚Ì‚Å[‚³ŠÖ˜A‚Ì—LŒø/–³Œø‚âw’è‚ÍˆêØ‚µ‚Ä‚¢‚Ü‚¹‚ñB
+		// XXX - ã“ã®ã‚µãƒ³ãƒ—ãƒ«ã§ã¯ãƒ†ã‚¯ã‚¹ãƒãƒ£ã®ç°¡å˜ãªæç”»ã ã‘ãªã®ã§æ·±ã•é–¢é€£ã®æœ‰åŠ¹/ç„¡åŠ¹ã‚„æŒ‡å®šã¯ä¸€åˆ‡ã—ã¦ã„ã¾ã›ã‚“ã€‚
 
-		// ”wŒiF‚ğw’è‚µ‚Ä”wŒi‚ğ•`‰æ‚µ‚Ü‚·B
+		// èƒŒæ™¯è‰²ã‚’æŒ‡å®šã—ã¦èƒŒæ™¯ã‚’æç”»ã—ã¾ã™ã€‚
 		GLES20.glClearColor(1.0f, 1.0f, 1.0f, 1.0f);
 		GLES20.glClear(GLES20.GL_COLOR_BUFFER_BIT);
 
-		// ”wŒi‚Æ‚ÌƒuƒŒƒ“ƒh•û–@‚ğİ’è‚µ‚Ü‚·B
+		// èƒŒæ™¯ã¨ã®ãƒ–ãƒ¬ãƒ³ãƒ‰æ–¹æ³•ã‚’è¨­å®šã—ã¾ã™ã€‚
 		GLES20.glEnable(GLES20.GL_TEXTURE_2D);
 		GLES20.glEnable(GLES20.GL_BLEND);
-		GLES20.glBlendFunc(GLES20.GL_SRC_ALPHA, GLES20.GL_ONE_MINUS_SRC_ALPHA);	// ’Pƒ‚ÈƒAƒ‹ƒtƒ@ƒuƒŒƒ“ƒh
+		GLES20.glBlendFunc(GLES20.GL_SRC_ALPHA, GLES20.GL_ONE_MINUS_SRC_ALPHA);	// å˜ç´”ãªã‚¢ãƒ«ãƒ•ã‚¡ãƒ–ãƒ¬ãƒ³ãƒ‰
 
-		// ƒeƒNƒXƒ`ƒƒ‚Ìw’è
+		// ãƒ†ã‚¯ã‚¹ãƒãƒ£ã®æŒ‡å®š
 		GLES20.glActiveTexture(GLES20.GL_TEXTURE0);
 		GLES20.glBindTexture(GLES20.GL_TEXTURE_2D, mTextureId);
 		GLES20.glUniform1i(mTexture, 0);
@@ -85,18 +85,18 @@ public final class SimpleRenderer implements GLSurfaceView.Renderer {
 
 	@Override
 	public void onSurfaceChanged(GL10 gl, int width, int height) {
-		// OpenGL ES 2.0 ‚ğg—p‚·‚é‚Ì‚ÅAƒpƒ‰ƒ[ƒ^‚Å“n‚³‚ê‚½ GL10 ƒCƒ“ƒ^[ƒtƒF[ƒX‚ğ–³‹‚µ‚ÄA‘ã‚í‚è‚É GLES20 ƒNƒ‰ƒX‚ÌÃ“Iƒƒ\ƒbƒh‚ğg—p‚µ‚Ü‚·B
+		// OpenGL ES 2.0 ã‚’ä½¿ç”¨ã™ã‚‹ã®ã§ã€ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã§æ¸¡ã•ã‚ŒãŸ GL10 ã‚¤ãƒ³ã‚¿ãƒ¼ãƒ•ã‚§ãƒ¼ã‚¹ã‚’ç„¡è¦–ã—ã¦ã€ä»£ã‚ã‚Šã« GLES20 ã‚¯ãƒ©ã‚¹ã®é™çš„ãƒ¡ã‚½ãƒƒãƒ‰ã‚’ä½¿ç”¨ã—ã¾ã™ã€‚
 
-		// ƒrƒ…[ƒ|[ƒg‚ğİ’è‚µ‚Ü‚·B
+		// ãƒ“ãƒ¥ãƒ¼ãƒãƒ¼ãƒˆã‚’è¨­å®šã—ã¾ã™ã€‚
 		GLES20.glViewport(0, 0, width, height);
 		GLES20Utils.checkGlError("glViewport");
 	}
 
 	@Override
 	public void onSurfaceCreated(GL10 gl, EGLConfig config) {
-		// OpenGL ES 2.0 ‚ğg—p‚·‚é‚Ì‚ÅAƒpƒ‰ƒ[ƒ^‚Å“n‚³‚ê‚½ GL10 ƒCƒ“ƒ^[ƒtƒF[ƒX‚ğ–³‹‚µ‚ÄA‘ã‚í‚è‚É GLES20 ƒNƒ‰ƒX‚ÌÃ“Iƒƒ\ƒbƒh‚ğg—p‚µ‚Ü‚·B
+		// OpenGL ES 2.0 ã‚’ä½¿ç”¨ã™ã‚‹ã®ã§ã€ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã§æ¸¡ã•ã‚ŒãŸ GL10 ã‚¤ãƒ³ã‚¿ãƒ¼ãƒ•ã‚§ãƒ¼ã‚¹ã‚’ç„¡è¦–ã—ã¦ã€ä»£ã‚ã‚Šã« GLES20 ã‚¯ãƒ©ã‚¹ã®é™çš„ãƒ¡ã‚½ãƒƒãƒ‰ã‚’ä½¿ç”¨ã—ã¾ã™ã€‚
 
-		// ƒvƒƒOƒ‰ƒ€‚ğ¶¬‚µ‚Äg—p‰Â”\‚É‚µ‚Ü‚·B
+		// ãƒ—ãƒ­ã‚°ãƒ©ãƒ ã‚’ç”Ÿæˆã—ã¦ä½¿ç”¨å¯èƒ½ã«ã—ã¾ã™ã€‚
 		mProgram = GLES20Utils.createProgram(VERTEX_SHADER, FRAGMENT_SHADER);
 		if (mProgram == 0) {
 			throw new IllegalStateException();
@@ -104,7 +104,7 @@ public final class SimpleRenderer implements GLSurfaceView.Renderer {
 		GLES20Utils.glUseProgram(mProgram);
 		GLES20Utils.checkGlError("glUseProgram");
 
-		// ƒVƒF[ƒ_‚Åg—p‚·‚é•Ï”‚Ìƒnƒ“ƒhƒ‹‚ğæ“¾‚µg—p‰Â”\‚É‚µ‚Ü‚·B
+		// ã‚·ã‚§ãƒ¼ãƒ€ã§ä½¿ç”¨ã™ã‚‹å¤‰æ•°ã®ãƒãƒ³ãƒ‰ãƒ«ã‚’å–å¾—ã—ä½¿ç”¨å¯èƒ½ã«ã—ã¾ã™ã€‚
 		mPosition = GLES20.glGetAttribLocation(mProgram, "position");
 		GLES20Utils.checkGlError("glGetAttribLocation position");
 		if (mPosition == -1) {
@@ -125,7 +125,7 @@ public final class SimpleRenderer implements GLSurfaceView.Renderer {
 			throw new IllegalStateException("Could not get uniform location for texture");
 		}
 
-		// ƒeƒNƒXƒ`ƒƒ‚ğì¬‚µ‚Ü‚·B(ƒT[ƒtƒFƒX‚ªì¬‚³‚ê‚é“x‚É‚±‚ê‚ğs‚¤•K—v‚ª‚ ‚è‚Ü‚·)
+		// ãƒ†ã‚¯ã‚¹ãƒãƒ£ã‚’ä½œæˆã—ã¾ã™ã€‚(ã‚µãƒ¼ãƒ•ã‚§ã‚¹ãŒä½œæˆã•ã‚Œã‚‹åº¦ã«ã“ã‚Œã‚’è¡Œã†å¿…è¦ãŒã‚ã‚Šã¾ã™)
 		final Bitmap bitmap = BitmapFactory.decodeResource(mContext.getResources(), R.drawable.sample);
 		mTextureId = GLES20Utils.loadTexture(bitmap);
 		bitmap.recycle();
