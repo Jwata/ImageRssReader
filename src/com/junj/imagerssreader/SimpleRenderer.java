@@ -3,7 +3,9 @@ package com.junj.imagerssreader;
 import javax.microedition.khronos.egl.EGLConfig;
 import javax.microedition.khronos.opengles.GL10;
 
+import android.R.integer;
 import android.content.Context;
+import android.opengl.GLES20;
 import android.opengl.GLSurfaceView;
 import android.opengl.GLSurfaceView.Renderer;
 
@@ -55,6 +57,12 @@ public final class SimpleRenderer implements GLSurfaceView.Renderer {
 			"void main() {" +
 				"gl_FragColor = texture2D(texture, texcoordVarying);" +
 			"}";
+	
+	private int mTextureId;
+	private int mTexcormTexcoordBuffer;
+	private int mTexture;
+	private int mTexcoord;
+	private int mPosition;
 	
 	@Override
 	public void onDrawFrame(GL10 gl) {
