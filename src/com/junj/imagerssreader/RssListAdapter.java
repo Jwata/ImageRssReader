@@ -10,6 +10,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+/*
 public class RssListAdapter extends ArrayAdapter<Item> {
 	private LayoutInflater mInflater;
 	private TextView mTitle;
@@ -49,3 +50,4 @@ public class RssListAdapter extends ArrayAdapter<Item> {
 		return view;
 	}
 }
+*/

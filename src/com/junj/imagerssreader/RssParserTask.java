@@ -11,6 +11,7 @@ import android.app.ProgressDialog;
 import android.os.AsyncTask;
 import android.util.Xml;
 
+/*
 public class RssParserTask extends AsyncTask<String, Integer, RssListAdapter> {
 	private RssReaderActivity mActivity; 
 	private RssListAdapter mAdapter; 
@@ -104,3 +105,4 @@ System.out.println("parse start!");
 		return mAdapter;
 	}
 }
+*/

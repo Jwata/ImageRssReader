@@ -1,27 +1,34 @@
-package com.junj.imagerssreader;
+// package com.junj.imagerssreader;
+package com.junj.android.example.gles20.ui;
+
+
+import com.junj.android.example.gles20.gl.SimpleRenderer;
 
 import android.opengl.GLSurfaceView;
 import android.os.Bundle;
-import android.app.ListActivity;
-import android.content.Intent;
+import android.app.Activity;
+// import android.app.ListActivity;
+// import android.content.Intent;
 import android.view.Menu;
-import android.view.MenuItem;
-import android.view.View;
-import android.widget.ListView;
+// import android.view.MenuItem;
+// import android.view.View;
+// import android.widget.ListView;
 
-import java.util.ArrayList;
+// import java.util.ArrayList;
 
-public class RssReaderActivity extends ListActivity {
+public class RssReaderActivity extends Activity {
+// public class RssReaderActivity extends ListActivity {
 	public static final int MENU_ITEM_RELOAD = Menu.FIRST;
 	public static final String RSS_FEED_URL = "https://picasaweb.google.com/data/feed/base/featured?alt=rss"; 
-	private ArrayList<Item> mItems;
-	private RssListAdapter mAdapter;
+//	private ArrayList<Item> mItems;
+//	private RssListAdapter mAdapter;
 	
 	private GLSurfaceView mGLSurfaceView;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		/*
 		setContentView(R.layout.main);
 		
 		mItems = new ArrayList<Item>();
@@ -29,14 +36,15 @@ public class RssReaderActivity extends ListActivity {
 		
 		RssParserTask task = new RssParserTask(this, mAdapter);
 		task.execute(RSS_FEED_URL);
-		
-		
+		*/
+
 		mGLSurfaceView = new GLSurfaceView(this);
 		mGLSurfaceView.setEGLContextClientVersion(2);
 		mGLSurfaceView.setRenderer(new SimpleRenderer(getApplicationContext()));
 		setContentView(mGLSurfaceView);
 	}
 
+	/*
 	@Override
 	protected void onListItemClick(ListView l, View v, int position, long id) {
 		Item item = mItems.get(position);
@@ -69,6 +77,7 @@ public class RssReaderActivity extends ListActivity {
 		}
 		return super.onOptionsItemSelected(item);
 	}
+	*/
 	
 	@Override
 	public void onResume() {
@@ -81,4 +90,5 @@ public class RssReaderActivity extends ListActivity {
 		super.onPause();
 		mGLSurfaceView.onPause();
 	}
+
 }

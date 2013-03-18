@@ -1,13 +1,18 @@
-package com.junj.imagerssreader;
+package com.junj.android.example.gles20.gl;
+
+import java.nio.FloatBuffer;
 
 import javax.microedition.khronos.egl.EGLConfig;
 import javax.microedition.khronos.opengles.GL10;
 
-import android.R.integer;
+import com.junj.android.example.gles20.R;
+import com.junj.android.opengl.GLES20Utils;
+
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.opengl.GLES20;
 import android.opengl.GLSurfaceView;
-import android.opengl.GLSurfaceView.Renderer;
 
 public final class SimpleRenderer implements GLSurfaceView.Renderer {
 	private final Context mContext;
@@ -58,11 +63,12 @@ public final class SimpleRenderer implements GLSurfaceView.Renderer {
 				"gl_FragColor = texture2D(texture, texcoordVarying);" +
 			"}";
 	
-	private int mTextureId;
-	private int mTexcormTexcoordBuffer;
-	private int mTexture;
-	private int mTexcoord;
+	private int mProgram;
 	private int mPosition;
+	private int mTexcoord;
+	private int mTexture;
+	
+	private int mTextureId;
 	
 	@Override
 	public void onDrawFrame(GL10 gl) {
@@ -109,7 +115,7 @@ public final class SimpleRenderer implements GLSurfaceView.Renderer {
 		if (mProgram == 0) {
 			throw new IllegalStateException();
 		}
-		GLES20Utils.glUseProgram(mProgram);
+		GLES20.glUseProgram(mProgram);
 		GLES20Utils.checkGlError("glUseProgram");
 
 		// シェーダで使用する変数のハンドルを取得し使用可能にします。
@@ -138,5 +144,5 @@ public final class SimpleRenderer implements GLSurfaceView.Renderer {
 		mTextureId = GLES20Utils.loadTexture(bitmap);
 		bitmap.recycle();
 	}
-
+	
 }

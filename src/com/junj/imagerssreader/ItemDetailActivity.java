@@ -1,5 +1,6 @@
 package com.junj.imagerssreader;
 
+/*
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -35,3 +36,4 @@ public class ItemDetailActivity extends Activity {
 	}
 
 }
+*/
